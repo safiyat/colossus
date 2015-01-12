@@ -1,2 +1,5 @@
 from flask import Blueprint
-facebook = Blueprint('facebook', __name__)
+face = Blueprint('face', __name__)
+facebook_blueprint = Blueprint('facebook', __name__)
+
+from . import views

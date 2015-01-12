@@ -1,3 +1,55 @@
-<html>
+<html en-us>
+<head lang="en">
+    <meta charset="UTF-8">
+	<title> Facebook Login </title>
+	<style type="text/css">
+		#signin_dialog {
+			width:auto;
+			height:auto;
+			border:12px solid #cccccc;
+			border-radius:10px;
+			opacity:2;
+			margin:0 auto;
+			position:fixed;
+			z-index:10;
+			top: 25%;
+			right:24%;
+			padding:20px;
+		}
+		#lineLeft{
+		    float: left;
+		    width: 285px;
+		    padding: 20px;
+		}
+		#lineLeft div{
+    		margin-bottom: 10px;
+		}
+		.clear {
+    		clear: both;
+		}
+	</style>
+	<script>
+		function fb_hover() { document.getElementById('fb_button').setAttribute('src', '../static/image/fb1.png'); }
+		function gb_out() { document.getElementById('fb_button').setAttribute('src', '../static/image/fb.png'); }
+		function gp_on() { document.getElementById('fb_button').setAttribute('src', '../static/image/fb.png'); }
+		function fb_click() { window.location.assign("/fblogin"); }
+	</script>
+</head>
+<body>
+	<div id="signin_dialog"style="">
+		<div id="lineLeft" style="border-right: 1px solid #cccccc;">
+			<h3>Login</h3>
+			<div> <input type="text" autocomplete="on" name="email" placeholder="Email" style="width:260px;height:30px;"></input>
+			</div>
+			<div> <input type="password" name="passw" placeholder="Password" style="width:260px; height:30px"></input>
+			</div>
+			<button type="submit" style="height:30px">LOGIN</button>
+		</div>
+		<div id="lineLeft"> <h3>Sign in using</h3>
+			<br>
+			<div> <img id="fb_button" src="../static/image/fb.png" align="left" height="40px" width="128px" onmouseover="fb_hover()" onmouseout="fb_out()" onclick="fb_click()"/>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
-

@@ -1,2 +1,6 @@
 from flask import Blueprint
-gooele = Blueprint('google', __name__)
+
+application = Blueprint('application', __name__)
+google_blueprint = Blueprint('gogole', __name__)
+
+from . import views

@@ -11,6 +11,7 @@ from flask.ext.mongoengine import MongoEngine
 from flask.ext.admin import Admin
 from flask_wtf.csrf import CsrfProtect
 
+import googleplus
 
 app = None
 admin = Admin()
@@ -35,14 +36,19 @@ def create_app(package_name='colossus', config_name='Development'):
         app.jinja_loader,
         jinja2.FileSystemLoader('colossus/templates/'),
     ])
-
-    
-    """
-        #####################
-
-    """
-
+    import googleplus
+    import facebooklogin
+    from . import google 
+    from . import facebook
+    # from google import application
+    # app.register_blueprint(application)
+    # from googleplus import appss 
+    # app.register_blueprint(appss)
+    from facebook import face
+    app.register_blueprint(face)
+    from facebooklogin import apps
+    app.register_blueprint(apps)
     return app
 
-def create_celery_app(app=None):
-    pass
+# def create_celery_app(app=None):
+#     pass
