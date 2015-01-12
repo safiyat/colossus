@@ -48,8 +48,3 @@ class BaseUser(db.Document):
 
 # class UserContacts(BaseUser):
 #    ref_user =  db.ListField(db.ReferenceField(AuthUser), default=[])
-
-
-
-
-;
